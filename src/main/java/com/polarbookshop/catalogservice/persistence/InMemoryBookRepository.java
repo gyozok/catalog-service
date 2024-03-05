@@ -1,15 +1,15 @@
 package com.polarbookshop.catalogservice.persistence;
 
 import com.polarbookshop.catalogservice.domain.Book;
-import com.polarbookshop.catalogservice.domain.BookRepository;
-import org.springframework.stereotype.Repository;
+import com.polarbookshop.catalogservice.domain.BookRepository_forInMemory;
 
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
-@Repository
-public class InMemoryBookRepository implements BookRepository {
+@Deprecated(since = "SpringDataJdbc implementation was introduced", forRemoval = false)
+//@Repository
+public class InMemoryBookRepository implements BookRepository_forInMemory {
 
     private static final Map<String, Book> books =
             new ConcurrentHashMap<>();

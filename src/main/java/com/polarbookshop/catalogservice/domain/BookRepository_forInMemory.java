@@ -2,7 +2,7 @@ package com.polarbookshop.catalogservice.domain;
 
 import java.util.Optional;
 
-public interface BookRepository {
+public interface BookRepository_forInMemory {
     Iterable<Book> findAll();
 
     Optional<Book> findByIsbn(String isbn);
