@@ -77,5 +77,6 @@ jobs:
           registry: ghcr.io
           username: gyozok
           password: ${{ secrets.GITHUB_TOKEN }}
-#      - name: Publish container image
+      - name: Publish container image
+        run: docker push ghcr.io/gyozok/catalog-service:latest
 #        run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
