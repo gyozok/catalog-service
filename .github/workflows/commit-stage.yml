@@ -41,8 +41,7 @@ jobs:
           ./mvnw install
   package:
     name: Package and Publish
-    if: ${{ github.ref == 'refs/head/main' }}
-    needs: [main]
+    needs: [build]
     runs-on: ubuntu-22.04
     permissions:
       contents: read
