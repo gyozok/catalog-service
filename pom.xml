@@ -119,6 +119,22 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+<!--						<name>${project.name}</name>-->
+						<builder>paketobuildpacks/builder:base</builder>
+						<env>
+							<BP_JVM_VERSION>17</BP_JVM_VERSION>
+						</env>
+					</image>
+					<docker>
+						<publishRegistry>
+							<username>${REGISTRY_USERNAME}</username>
+							<password>${REGISTRY_TOKEN}</password>
+							<url>${REGISTRY_URL}</url>
+						</publishRegistry>
+					</docker>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
