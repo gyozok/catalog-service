@@ -19,7 +19,7 @@ public class BookJsonTest {
     @Test
     public void testSerialize() throws IOException {
         //GIVEN
-        var book = new Book(null, "1234567890", "Title", "Author", 9.90, null, null,0);
+        var book = new Book(null, "1234567890", "Title", "Author", 9.90, "Publisher", null, null,0);
 
         //WHEN
         var jsonContent = json.write(book);
@@ -47,7 +47,8 @@ public class BookJsonTest {
                 "isbn": "1234567890",
                 "title": "Title",
                 "author": "Author",
-                "price": 9.90
+                "price": 9.90,
+                "publisher": "Publisher"
             }
         """;
 
@@ -55,6 +56,6 @@ public class BookJsonTest {
         assertThat(json.parse(content))
         //THEN
             .usingRecursiveComparison()
-            .isEqualTo(new Book(null, "1234567890", "Title", "Author", 9.90, null, null,0));
+            .isEqualTo(new Book(null, "1234567890", "Title", "Author", 9.90, "Publisher", null, null,0));
     }
 }
