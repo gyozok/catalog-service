@@ -76,6 +76,6 @@ jobs:
         with:
           registry: ghcr.io
           username: gyozok
-          password: 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
-      - name: Publish container image
-        run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Publish container image
+#        run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
